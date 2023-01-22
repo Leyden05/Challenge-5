@@ -1,7 +1,30 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+// var currentTime = dayjs();
+var saveButton1 = document.getElementById('hour-9');
+var requestURL = 'https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js';
+
+// console.log(currentTime);
+
+var dayJs = dayjs();
+
+
+// function getApi() {
+//     fetch(requestURL)
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((data) => {
+//         console.log(data);
+//         });
+
+// };
+
+
+saveButton1.addEventListener('click', function () {
+  console.log('this saved');
+});
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,4 +43,3 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
