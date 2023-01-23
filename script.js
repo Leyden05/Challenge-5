@@ -1,30 +1,35 @@
+$(function () {
+
+  var timeBlock = $(".time-block");
+  var currentTime = dayjs().hour();
+  console.log(currentHour);
+
+  function save() {
+    var thing = $(this).parent().attr("id");
+    var input = $(this).siblings(".description").val();
+    console.log('this worked!');
+    localStorage.setItem(thing, input);
+  }
+
+// the above function is saying "when the attribute of id is selected and typed in (hence the 'this' parameter), and the attribute of .description (which is really an id of description), then save the input button to local storage on button click (below)
+
+  timeBlock.on('click', '.saveBtn', save);
+
+  timeBlock.each(function() {
+    var thisThing = $(this).attr('id');
+
+    if (thisThing) {
+
+    }
+  })
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 // var currentTime = dayjs();
-var saveButton1 = document.getElementById('hour-9');
-var requestURL = 'https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js';
-
-// console.log(currentTime);
-
-var dayJs = dayjs();
 
 
-// function getApi() {
-//     fetch(requestURL)
-//       .then((response) => {
-//         return response.json();
-//       })
-//       .then((data) => {
-//         console.log(data);
-//         });
-
-// };
-
-
-saveButton1.addEventListener('click', function () {
-  console.log('this saved');
-});
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -43,3 +48,4 @@ saveButton1.addEventListener('click', function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+});
