@@ -1,7 +1,7 @@
 $(function () {
 
   var timeBlock = $(".time-block");
-  var currentTime = dayjs().hour();
+  var currentHour = dayjs().hour();
   console.log(currentHour);
 
   function save() {
@@ -10,6 +10,9 @@ $(function () {
     console.log('this worked!');
     localStorage.setItem(thing, input);
   }
+
+  var key = $(this).attr('id');
+  hour = parseInt(hour);
 
 // the above function is saying "when the attribute of id is selected and typed in (hence the 'this' parameter), and the attribute of .description (which is really an id of description), then save the input button to local storage on button click (below)
 
